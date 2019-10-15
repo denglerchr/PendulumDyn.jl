@@ -65,7 +65,7 @@ end
 
 function pendulum_rk4(xt::AbstractVector, ut::Number, dt::Number, pend::Pendulum{T} = Pendulum()) where T
     xt2 = copy(xt)
-    return pendulum_rk4!(xt, ut, dt, pend)
+    return pendulum_rk4!(xt2, ut, dt, pend)
 end
 
 function pendulum_rk4!(xt::AbstractVector, ut::Number, dt::Number, pend::Pendulum{T} = Pendulum()) where T
