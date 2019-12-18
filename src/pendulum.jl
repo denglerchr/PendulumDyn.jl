@@ -84,6 +84,6 @@ function pendulum_rk4!(xt::AbstractVector, ut::Number, dt::Number, pend::Pendulu
     dy4 = dxdt_pendulum(temp, ut, pend);
 
     # update xt
-    @. xt += dt*(dy1+2.0*(dy2+dy3)+dy4)/6.0
+    @. xt += dt*(dy1+T(2.0)*(dy2+dy3)+dy4)/T(6.0)
     return xt
 end
