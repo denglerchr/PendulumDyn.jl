@@ -1,4 +1,4 @@
 name = "PendulumDyn"
 uuid = "40716cd2-486f-5173-b11d-7ac7caf292b6"
 authors = ["Christian Dengler <c.dengler@tum.de>"]
-version = "0.1.2"
+version = "0.1.3"
