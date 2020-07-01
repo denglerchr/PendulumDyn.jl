@@ -14,18 +14,18 @@ struct PendulumMotor{T}
     L::T # armature inductance
 end
 
-function PendulumMotor(T::Type)
-    Mcart = T( 29.691 ) # mass of the cart
-    Mrod = T( 2.3*1.178/20 ) # mass of the rod
-    Lrod = T( 1.178/2 )    # Length of the rod
-    mu_v = T( 0.001 )  # viscous friction
-    k1 = T( 0.263 ) # motor constant
-    k2 = T( 0.268 ) # motor constant
-    i = T( 3 ) # gear ratio
-    r = T( 0.0239 )
-    R = T( 1.35 ) # armature resistance
-    L = T( 1.35*10^-3 ) # armature inductance
-    return PendulumMotor{T}(Mcart, Mrod, Lrod, mu_v, k1, k2, i, r, R, L)
+function PendulumMotor(T::Type;
+    Mcart = 29.691,  # mass of the cart
+    Mrod = 2.3*1.178,  # mass of the rod
+    Lrod = 1.178/2,   # Length of the rod
+    mu_v = 0.001, # viscous friction
+    k1 = 0.263, # motor constant
+    k2 = 0.268, # motor constant
+    i = 3, # gear ratio
+    r = 0.0239,
+    R = 1.35, # armature resistance
+    L = 1.35*10^-3 ) # armature inductance
+    return PendulumMotor{T}(T(Mcart), T(Mrod), T(Lrod), T(mu_v), T(k1), T(k2), T(i), T(r), T(R), T(L))
 end
 
 PendulumMotor() = PendulumMotor(Float64)
